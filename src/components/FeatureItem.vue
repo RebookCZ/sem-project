@@ -11,11 +11,16 @@
 <script>
 export default {
   name: 'FeatureItem',
-  // Options API: receiving data via props
   props: {
     title: String,
     description: String,
-    iconClass: String // FontAwesome classes like 'fa fa-shield'
+    iconClass: { type: String, default: 'fa fa-check' }
+  },
+  computed: {
+    // Dynamically adds a custom class for styling consistency
+    iconStyle() {
+      return `${this.iconClass} custom-feature-icon`;
+    }
   }
 }
 </script>
