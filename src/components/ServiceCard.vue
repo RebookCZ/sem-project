@@ -11,11 +11,23 @@
 <script>
 export default {
   name: 'ServiceCard',
-  // Options API: Props received from parent component
   props: {
-    title: String,
-    description: String,
-    iconUrl: String
+    title: { type: String, required: true },
+    description: { type: String, default: 'No description available' },
+    iconUrl: { type: String, default: '' }
+  },
+  computed: {
+    // Limits description length for better UI alignment
+    shortDescription() {
+      return this.description.length > 70 
+        ? this.description.substring(0, 70) + '...' 
+        : this.description;
+    }
+  },
+  methods: {
+    handleServiceClick() {
+      console.log(`Navigating to details for: ${this.title}`);
+    }
   }
 }
 </script>
