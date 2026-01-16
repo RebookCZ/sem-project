@@ -37,7 +37,7 @@ export default {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 120px 0px 150px 0px;
+  padding: 0px 0px 50px 0px;
   text-align: center;
   color: #fff;
   margin-top: 0px; /* Aligned under the main header */
