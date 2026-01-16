@@ -17,16 +17,13 @@
 <script>
 export default {
   name: 'PageHeading',
-  // Options API: props to change text on different pages
   props: {
-    title: {
-      type: String,
-      required: true
-    },
-    subtitle: {
-      type: String,
-      default: 'Online Currency'
-    }
+    title: { type: String, default: 'Mexant Services' },
+    subtitle: String
+  },
+  mounted() {
+    // Lifecycle hook requirement
+    console.log(`Page: ${this.title} is now active.`);
   }
 }
 </script>
