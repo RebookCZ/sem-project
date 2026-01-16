@@ -11,13 +11,13 @@
 export default {
   name: 'StatsCounter',
   props: {
-    targetNumber: {
-      type: String,
-      required: true
-    },
-    label: {
-      type: String,
-      required: true
+    number: { type: [String, Number], required: true },
+    label: { type: String, default: 'Total' }
+  },
+  methods: {
+    // Utility to log stat interactions
+    onStatClick() {
+      console.log(`User checked statistics for: ${this.label}`);
     }
   }
 }
