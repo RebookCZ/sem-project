@@ -8,12 +8,17 @@
 <script>
 export default {
   name: 'SectionHeader',
-  // Options API: props for dynamic text
   props: {
     subtitle: String,
     titlePart1: String,
     titleEmphasis: String,
     titlePart2: String
+  },
+  methods: {
+    // Utility to log when a section enters the viewport
+    onHeaderHover() {
+      this.$emit('header-hovered', this.titleEmphasis);
+    }
   }
 }
 </script>
