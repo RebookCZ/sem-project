@@ -52,11 +52,11 @@
 </template>
 
 <script>
-// Importing all necessary components
-import PageHeading from '@/components/PageHeading.vue';
-import StatsCounter from '@/components/StatsCounter.vue';
-import SectionHeader from '@/components/SectionHeader.vue';
-import TestimonialCard from '@/components/TestimonialCard.vue';
+import PageHeading from '@/components/PageHeading.vue'
+import StatsCounter from '@/components/StatsCounter.vue'
+import SectionHeader from '@/components/SectionHeader.vue'
+import TestimonialCard from '@/components/TestimonialCard.vue'
+import { useServiceStore } from '@/stores/useServiceStore'
 
 export default {
   name: 'AboutView',
@@ -66,19 +66,16 @@ export default {
     SectionHeader,
     TestimonialCard
   },
-  data() {
-    return {
-      // Local data for stats and testimonials
-      statsData: [
-        { value: '10+', label: 'Years Experience' },
-        { value: '500+', label: 'Happy Clients' },
-        { value: '120', label: 'Projects Finished' },
-        { value: '25', label: 'Awards Won' }
-      ],
-      testimonials: [
-        { text: 'Mexant helped us to manage our crypto assets efficiently.', author: 'John Doe', pos: 'Crypto Trader' },
-        { text: 'The best financial service I have ever used in my career.', author: 'Jane Smith', pos: 'Business Owner' }
-      ]
+
+  computed: {
+    serviceStore() {
+      return useServiceStore()
+    },
+    statsData() {
+      return this.serviceStore.stats
+    },
+    testimonials() {
+      return this.serviceStore.testimonials
     }
   }
 }
