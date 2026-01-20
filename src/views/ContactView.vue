@@ -43,14 +43,12 @@
 </template>
 
 <script>
-// Component imports
 import PageHeading from '@/components/PageHeading.vue';
 import SectionHeader from '@/components/SectionHeader.vue';
 
 export default {
   name: 'ContactView',
   components: { PageHeading, SectionHeader },
-  // Options API: Component data
   data() {
     return {
       successVisible: false,
@@ -61,14 +59,10 @@ export default {
       }
     }
   },
-  // Options API: Methods
   methods: {
     handleContactSubmit() {
-      // Simulate form submission logic
       console.log('Form data submitted:', this.contactForm);
       this.successVisible = true;
-      
-      // Clear form after success
       setTimeout(() => {
         this.successVisible = false;
         this.contactForm = { name: '', email: '', message: '' };
@@ -79,7 +73,6 @@ export default {
 </script>
 
 <style scoped>
-/* Custom styling for contact form inputs */
 .custom-input {
   border-radius: 15px;
   background-color: #f4f7fb;

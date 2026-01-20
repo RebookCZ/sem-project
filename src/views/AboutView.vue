@@ -5,7 +5,7 @@
     <section class="stats-section">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3" v-for="stat in statsData" :key="stat.label">
+          <div class="col-lg-3" v-for="stat in serviceStore.stats" :key="stat.label">
             <StatsCounter :number="stat.value" :label="stat.label" />
           </div>
         </div>
@@ -42,7 +42,7 @@
           <div class="col-lg-12">
             <SectionHeader subtitle="Testimonials" titlePart1="What they" titleEmphasis="Say" titlePart2="About Us" />
           </div>
-          <div class="col-lg-6" v-for="item in testimonials" :key="item.author">
+          <div class="col-lg-6" v-for="item in serviceStore.testimonials" :key="item.author">
             <TestimonialCard :quote="item.text" :author="item.author" :position="item.pos" />
           </div>
         </div>
@@ -52,30 +52,21 @@
 </template>
 
 <script>
-import PageHeading from '@/components/PageHeading.vue'
-import StatsCounter from '@/components/StatsCounter.vue'
-import SectionHeader from '@/components/SectionHeader.vue'
-import TestimonialCard from '@/components/TestimonialCard.vue'
-import { useServiceStore } from '@/stores/useServiceStore'
+import PageHeading from '@/components/PageHeading.vue';
+import StatsCounter from '@/components/StatsCounter.vue';
+import SectionHeader from '@/components/SectionHeader.vue';
+import TestimonialCard from '@/components/TestimonialCard.vue';
+import { useServiceStore } from '@/stores/useServiceStore';
 
 export default {
   name: 'AboutView',
-  components: {
-    PageHeading,
-    StatsCounter,
-    SectionHeader,
-    TestimonialCard
+  components: { PageHeading, StatsCounter, SectionHeader, TestimonialCard },
+  data() {
+    return {};
   },
-
   computed: {
     serviceStore() {
-      return useServiceStore()
-    },
-    statsData() {
-      return this.serviceStore.stats
-    },
-    testimonials() {
-      return this.serviceStore.testimonials
+      return useServiceStore();
     }
   }
 }
@@ -83,7 +74,7 @@ export default {
 
 <style scoped>
 .stats-section {
-  margin-top: -50px; /* Overlap with heading */
+  margin-top: -50px;
   margin-bottom: 80px;
 }
 .about-details {

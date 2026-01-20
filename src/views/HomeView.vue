@@ -68,25 +68,25 @@
 </template>
 
 <script>
-import ServiceCard from '@/components/ServiceCard.vue'
-import SectionHeader from '@/components/SectionHeader.vue'
-import { useServiceStore } from '@/stores/useServiceStore'
+import ServiceCard from '@/components/ServiceCard.vue';
+import SectionHeader from '@/components/SectionHeader.vue';
+import { useServiceStore } from '@/stores/useServiceStore';
 
 export default {
   name: 'HomeView',
   components: { ServiceCard, SectionHeader },
-
+  data() {
+    return {};
+  },
   computed: {
     serviceStore() {
-      return useServiceStore()
+      return useServiceStore();
     }
   }
 }
 </script>
 
-
 <style scoped>
-/* High-quality background for Hero Section */
 .main-banner {
   background: linear-gradient(rgba(31, 39, 43, 0.8), rgba(31, 39, 43, 0.8)), 
               url('https://images.unsplash.com/photo-1518186239717-2e9b69d7744a?auto=format&fit=crop&w=1920&q=80');
@@ -95,13 +95,10 @@ export default {
   padding: 200px 0 150px 0;
   color: white;
 }
-
-/* Styling for the new Choose Us section */
 .why-choose-us {
   padding: 100px 0;
   background-color: #f8f9fa;
 }
-
 .feature-box {
   background: white;
   padding: 20px;
@@ -109,7 +106,6 @@ export default {
   transition: 0.3s;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
-
 .feature-box:hover {
   transform: translateY(-5px);
 }
