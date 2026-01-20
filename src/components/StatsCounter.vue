@@ -1,7 +1,7 @@
 <template>
   <div class="stat-item">
     <div class="count-area">
-      <h2 class="count-digit">{{ targetNumber }}</h2>
+      <h2 class="count-digit">{{ number }}</h2>
       <span class="count-title">{{ label }}</span>
     </div>
   </div>
@@ -11,13 +11,13 @@
 export default {
   name: 'StatsCounter',
   props: {
-    number: { type: [String, Number], required: true },
-    label: { type: String, default: 'Total' }
-  },
-  methods: {
-    // Utility to log stat interactions
-    onStatClick() {
-      console.log(`User checked statistics for: ${this.label}`);
+    number: {
+      type: [String, Number],
+      required: true
+    },
+    label: {
+      type: String,
+      default: 'Total'
     }
   }
 }

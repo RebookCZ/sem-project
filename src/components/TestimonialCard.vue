@@ -12,15 +12,8 @@ export default {
   name: 'TestimonialCard',
   props: {
     author: { type: String, required: true },
-    role: String,
-    quote: String,
-    stars: { type: Number, default: 5 }
-  },
-  computed: {
-    // Formats the author name to uppercase for design consistency
-    formattedAuthor() {
-      return this.author.toUpperCase();
-    }
+    quote: { type: String, required: true },
+    position: { type: String, default: '' }
   }
 }
 </script>

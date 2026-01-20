@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3" v-for="stat in statsData" :key="stat.label">
-            <StatsCounter :targetNumber="stat.value" :label="stat.label" />
+            <StatsCounter :number="stat.value" :label="stat.label" />
           </div>
         </div>
       </div>
