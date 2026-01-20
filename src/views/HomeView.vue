@@ -68,21 +68,22 @@
 </template>
 
 <script>
-import ServiceCard from '@/components/ServiceCard.vue';
-import SectionHeader from '@/components/SectionHeader.vue';
-import { useServiceStore } from '@/stores/useServiceStore';
+import ServiceCard from '@/components/ServiceCard.vue'
+import SectionHeader from '@/components/SectionHeader.vue'
+import { useServiceStore } from '@/stores/useServiceStore'
 
 export default {
   name: 'HomeView',
   components: { ServiceCard, SectionHeader },
-  data() {
-    return {
-      // Options API: Accessing Pinia Store
-      serviceStore: useServiceStore()
+
+  computed: {
+    serviceStore() {
+      return useServiceStore()
     }
   }
 }
 </script>
+
 
 <style scoped>
 /* High-quality background for Hero Section */
