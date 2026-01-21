@@ -1,33 +1,35 @@
 <template>
-  <header class="header-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <router-link to="/" class="logo">
-              <h4 style="color: #fff; font-weight: 900; margin: 0;">MEX<span style="color: #22b3c1;">ANT</span></h4>
-            </router-link>
-            
-            <ul class="nav">
-              <li><router-link to="/">Home</router-link></li>
-              <li><router-link to="/about">About Us</router-link></li>
-              <li><router-link to="/contact">Contact Us</router-link></li>
-            </ul>
-          </nav>
-        </div>
+  <div id="app-layout">
+    <header class="header-area">
+      <div class="container">
+        <nav class="main-nav">
+          <router-link to="/" class="logo">
+            <h4 style="color: #fff; font-weight: 900; margin: 0;">
+              MEX<span style="color: #22b3c1;">ANT</span>
+            </h4>
+          </router-link>
+
+          <ul class="nav">
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/about">About Us</router-link></li>
+            <li><router-link to="/contact">Contact Us</router-link></li>
+            <li><router-link to="/book">Book Consultation</router-link></li>
+            <li><router-link to="/consultations">My Consultations</router-link></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div class="main-content">
-    <router-view></router-view>
+    <main class="main-content">
+      <router-view />
+    </main>
+
+    <footer class="footer-section">
+      <div class="container">
+        <p>Copyright © 2026 Mexant Co., Ltd. All Rights Reserved.</p>
+      </div>
+    </footer>
   </div>
-
-  <footer class="footer-section">
-    <div class="container">
-      <p>Copyright © 2026 Mexant Co., Ltd. All Rights Reserved.</p>
-    </div>
-  </footer>
 </template>
 
 <script>
@@ -37,23 +39,32 @@ export default {
 </script>
 
 <style>
-/* Sticky Header Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .header-area {
-  position: fixed; /* Fixes the header to the top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: #1f272b; /* Solid dark color to prevent overlap mess */
+  background-color: #1f272b;
   display: flex;
   align-items: center;
-  z-index: 1000; /* Ensures header is above all content */
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.2); /* Soft shadow for depth */
+  z-index: 1000;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Offset for the content so it doesn't hide under the fixed header */
 .main-content {
-  padding-top: 80px; /* Equal to the height of the header */
+  flex: 1;
+  padding-top: 80px;
 }
 
 .main-nav {
